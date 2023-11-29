@@ -91,11 +91,11 @@ def tobs():
     session.close()
 
     tobs_last_year_values = []
-    for date, tobs, station in tobs_results:
+    for date, station, tobs in tobs_results:
         tobs_dict = {}
         tobs_dict["date"] = date
-        tobs_dict["tobs"] = tobs
         tobs_dict["station"] = station
+        tobs_dict["tobs"] = tobs
         tobs_last_year_values.append(tobs_dict)   
     return jsonify(tobs_last_year_values)
 
